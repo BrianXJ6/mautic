@@ -1,0 +1,7 @@
+FROM mautic/mautic:v4
+
+ARG APP_WORKDIR=/var/www/html
+
+WORKDIR ${APP_WORKDIR}
+
+EXPOSE 8000
