@@ -1,3 +1,6 @@
 .env
 /vendor
 /.vscode
+/var/cache
+/var/logs
+app/config/local.php
