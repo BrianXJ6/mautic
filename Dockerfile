@@ -1,7 +1,11 @@
 FROM mautic/mautic:v4
 
-ARG APP_WORKDIR=/var/www/html
+WORKDIR $APP_WORKDIR
 
-WORKDIR ${APP_WORKDIR}
+RUN groupadd --force -g 1000 mautic \
+    && useradd -ms /bin/bash --no-user-group -g 1000 -u 1337 mautic
+
+COPY /start-container.sh /start-container.sh
+RUN chmod +x /start-container.sh
 
 EXPOSE 8000
